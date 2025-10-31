@@ -1432,17 +1432,8 @@
             // Close modal and redirect to Stripe checkout
             document.getElementById('purchaseModal').classList.remove('active');
             
-            // Integrate with Stripe/PayPal here
-            // Example for Stripe Checkout:
-            // stripe.redirectToCheckout({ sessionId: 'YOUR_SESSION_ID' });
-            
-            // After successful payment, show WhatsApp access
-            // You can add this to your Stripe success page or send via email
-            const whatsappNumber = '+37258472379';
-            const whatsappLink = `https://wa.me/${whatsappNumber}?text=Ciao!%20Ho%20appena%20acquistato%20l'ebook%20%2248%20Ore%20per%20Dimenticarlo%22%20e%20vorrei%20accedere%20al%20supporto%2024/7`;
-            
-            // Temporary placeholder - Replace with actual payment integration
-            alert('⚙️ INTEGRAZIONE STRIPE\n\nInserisci qui il codice Stripe Checkout:\n\nstripe.redirectToCheckout({\n  lineItems: [{price: "price_xxx", quantity: 1}],\n  mode: "payment",\n  successUrl: "https://comeandareavanti.it/success?whatsapp=' + encodeURIComponent(whatsappLink) + '",\n  cancelUrl: "https://comeandareavanti.it"\n});\n\nDominio: comeandareavanti.it\n\nNella pagina success.html mostra il link WhatsApp: ' + whatsappLink);
+            // Redirect to Stripe payment link
+            window.location.href = 'https://buy.stripe.com/14A4gycvE8Na5UwfSp2Nq00';
         }
 
         // Scroll animations (optional enhancement)
