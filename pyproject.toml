@@ -4,4 +4,11 @@ version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.10.0",
+    "mplfinance>=0.12.10b0",
+    "pandas>=2.2.3",
+    "pycoingecko>=3.2.0",
+    "requests>=2.32.3",
+    "telegram>=0.0.1",
+]

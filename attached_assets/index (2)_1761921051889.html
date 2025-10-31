@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48 Ore per Dimenticarlo - Supera la Delusione d'Amore</title>
+    <style>
+        :root {
+            --color-primary: #FF6B9D;
+            --color-secondary: #FFB5D7;
+            --color-accent: #FF1B73;
+            --color-bg: #FFF5F8;
+            --color-dark: #2D1B2E;
+            --color-light: #FFFFFF;
+            --color-success: #10B981;
+            --color-warning: #F59E0B;
+            --color-mauve: #FF1B73;
+            --color-mauve-hover: #E0146A;
+            --color-lavender: #FFB5D7;
+            --color-rose: #FFF5F8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFF5F8 0%, #FFE8F0 100%);
+            color: var(--color-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, transparent 100%);
+        }
+
+        .countdown-banner {
+            background: var(--color-mauve);
+            color: var(--color-light);
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(135, 94, 110, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .timer {
+            display: inline-flex;
+            gap: 10px;
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .timer span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--color-dark);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: var(--color-mauve);
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .price-box {
+            display: inline-block;
+            background: var(--color-light);
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.2);
+            margin: 20px 0;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .new-price {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--color-mauve);
+        }
+
+        .new-price sup {
+            font-size: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-mauve);
+            color: var(--color-light);
+            padding: 18px 50px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(135, 94, 110, 0.4);
+            transition: all 0.3s ease;
+            margin: 15px 0;
+        }
+
+        .cta-button:hover {
+            background: var(--color-mauve-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(135, 94, 110, 0.6);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .badge-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--color-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Book Preview */
+        .book-preview {
+            background: var(--color-light);
+            padding: 50px 20px;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .book-preview h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--color-dark);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .benefit-card {
+            background: var(--color-light);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid var(--color-lavender);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--color-mauve);
+        }
+
+        /* Bonuses Section */
+        .bonuses {
+            background: linear-gradient(135deg, var(--color-mauve) 0%, #6D4B59 100%);
+            color: var(--color-light);
+            padding: 50px 20px;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(135, 94, 110, 0.4);
+        }
+
+        .bonuses h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .bonuses .subtitle-bonus {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .bonus-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .bonus-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .bonus-number {
+            background: var(--color-light);
+            color: var(--color-mauve);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .bonus-content h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .bonus-value {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 50px 20px;
+            background: var(--color-light);
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: var(--color-dark);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background: var(--color-light);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--color-mauve);
+            position: relative;
+        }
+
+        .stars {
+            color: #FFB800;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--color-mauve);
+        }
+
+        .testimonial-age {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+        }
+
+        .guarantee-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .guarantee h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .guarantee p {
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 50px 20px;
+            background: var(--color-light);
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--color-dark);
+        }
+
+        .faq-item {
+            background: #FFF5F8;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--color-secondary);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #FFE8F0;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--color-dark) 0%, #4A2E4B 100%);
+            color: var(--color-light);
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .final-cta .urgency {
+            background: rgba(135, 94, 110, 0.2);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 18px;
+            border: 2px solid var(--color-mauve);
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        .payment-icon {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: var(--color-dark);
+            font-size: 14px;
+        }
+
+        /* Modal Upsell */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--color-light);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 700px;
+            width: 100%;
+            margin: 20px;
+            text-align: center;
+            position: relative;
+            animation: slideIn 0.5s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .quiz-modal {
+            max-width: 650px;
+        }
+
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .quiz-subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-question {
+            margin: 30px 0;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: var(--color-dark);
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            padding: 18px 25px;
+            background: var(--color-light);
+            border: 2px solid var(--color-lavender);
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .quiz-option:hover {
+            background: var(--color-rose);
+            border-color: var(--color-mauve);
+            transform: translateX(5px);
+        }
+
+        .quiz-option.selected {
+            background: var(--color-mauve);
+            color: white;
+            border-color: var(--color-mauve-hover);
+        }
+
+        .result-loading {
+            padding: 40px;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--color-accent);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result-badge {
+            background: var(--color-mauve);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, var(--color-rose) 0%, var(--color-lavender) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 4px solid var(--color-mauve);
+        }
+
+        .result-description {
+            text-align: left;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .urgency-box {
+            background: #FFF3CD;
+            border: 2px solid #FFC107;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #856404;
+        }
+
+        .live-counter {
+            font-weight: bold;
+            color: var(--color-mauve);
+        }
+
+        .commitment-text {
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .commitment-text p {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .highlight-text {
+            color: var(--color-mauve);
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 14px;
+        }            @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero .subtitle {
+                font-size: 16px;
+            }
+
+            .new-price {
+                font-size: 36px;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 16px;
+                width: 100%;
+            }
+
+            .benefits-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timer {
+                font-size: 14px;
+                gap: 5px;
+            }
+
+            .countdown-banner {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .modal-content {
+                padding: 25px;
+                margin: 10px;
+            }
+
+            .quiz-modal {
+                padding: 20px;
+            }
+
+            .quiz-option {
+                padding: 15px 20px;
+                font-size: 15px;
+            }
+
+            .book-preview,
+            .bonuses,
+            .testimonials,
+            .guarantee,
+            .faq,
+            .final-cta {
+                padding: 30px 15px;
+            }
+
+            .book-preview h2,
+            .bonuses h2,
+            .testimonials h2,
+            .faq h2,
+            .final-cta h2 {
+                font-size: 26px;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .payment-icons {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .bonus-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .price-box {
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Quiz Modal (shows first) -->
+    <div class="modal active" id="quizModal">
+        <div class="modal-content quiz-modal">
+            <div id="quizStep1" class="quiz-step active">
+                <h2>Scopri il Tuo Profilo di Guarigione</h2>
+                <p class="quiz-subtitle">Rispondi a 3 semplici domande per capire come superare la tua delusione d'amore più velocemente</p>
+                
+                <div class="quiz-question">
+                    <p class="question-text"><strong>Domanda 1 di 3:</strong> Da quanto tempo stai soffrendo per questa persona?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="selectAnswer(1, 'meno-settimana', this)">Meno di una settimana</button>
+                        <button class="quiz-option" onclick="selectAnswer(1, '1-4-settimane', this)">Da 1 a 4 settimane</button>
+                        <button class="quiz-option" onclick="selectAnswer(1, 'oltre-mese', this)">Più di un mese</button>
+                        <button class="quiz-option" onclick="selectAnswer(1, 'molto-tempo', this)">Troppo tempo... non ce la faccio più</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quizStep2" class="quiz-step">
+                <h2>Quasi fatto...</h2>
+                <p class="quiz-subtitle">Le tue risposte stanno rivelando molto sul tuo percorso</p>
+                
+                <div class="quiz-question">
+                    <p class="question-text"><strong>Domanda 2 di 3:</strong> Cosa ti trattiene di più dal superarlo/a?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="selectAnswer(2, 'speranza', this)">Spero ancora che torni da me</button>
+                        <button class="quiz-option" onclick="selectAnswer(2, 'dipendenza', this)">Non riesco a smettere di pensarci</button>
+                        <button class="quiz-option" onclick="selectAnswer(2, 'autostima', this)">Mi sento sbagliata/inadeguata</button>
+                        <button class="quiz-option" onclick="selectAnswer(2, 'paura', this)">Ho paura di non trovare più nessuno</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quizStep3" class="quiz-step">
+                <h2>Ultima domanda...</h2>
+                <p class="quiz-subtitle">Stiamo analizzando il tuo profilo emotivo</p>
+                
+                <div class="quiz-question">
+                    <p class="question-text"><strong>Domanda 3 di 3:</strong> Se potessi svegliarti domani mattina, cosa vorresti provare?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="selectAnswer(3, 'pace', this)">Pace interiore e serenità</button>
+                        <button class="quiz-option" onclick="selectAnswer(3, 'forza', this)">Forza e fiducia in me stessa</button>
+                        <button class="quiz-option" onclick="selectAnswer(3, 'liberta', this)">Libertà dai pensieri ossessivi</button>
+                        <button class="quiz-option" onclick="selectAnswer(3, 'felicita', this)">Felicità e voglia di vivere</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quizResult" class="quiz-step">
+                <div class="result-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Stiamo analizzando le tue risposte...</p>
+                </div>
+                
+                <div class="result-content" style="display: none;">
+                    <div class="result-badge">IL TUO PROFILO</div>
+                    <h2 id="resultTitle">Profilo: Guaritrice in Evoluzione</h2>
+                    
+                    <div class="result-box">
+                        <p id="resultText" class="result-description"></p>
+                    </div>
+
+                    <div class="urgency-box">
+                        <strong>ATTENZIONE:</strong> In questo momento <span class="live-counter">127</span> ragazze stanno leggendo questa stessa pagina. Non lasciare che il tempo decida per te.
+                    </div>
+
+                    <div class="commitment-text">
+                        <p><strong>Hai appena fatto il primo passo.</strong></p>
+                        <p>Rispondere a queste domande significa che sei pronta a cambiare. Ma sappiamo entrambe che la consapevolezza da sola non basta.</p>
+                        <p class="highlight-text">Hai bisogno di un metodo concreto. Ed è esattamente quello che ti offriamo.</p>
+                    </div>
+
+                    <button class="cta-button" onclick="closeQuizAndScroll()">SCOPRI IL METODO DELLE 48 ORE</button>
+                    
+                    <p style="font-size: 13px; color: #999; margin-top: 15px;">347 ragazze hanno completato il quiz oggi e 291 hanno già iniziato il loro percorso</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="countdown-banner">
+                OFFERTA LIMITATA - SCADE TRA:
+                <div class="timer">
+                    <span id="hours">00</span>:
+                    <span id="minutes">00</span>:
+                    <span id="seconds">00</span>
+                </div>
+            </div>
+
+            <h1>
+                <span class="highlight">48 Ore</span> per Dimenticarlo<br>
+                La Guida che Ogni Ragazza Dovrebbe Leggere
+            </h1>
+
+            <p class="subtitle">
+                Smetti di soffrire. Inizia a vivere di nuovo. Il metodo scientifico per superare qualsiasi delusione d'amore.
+            </p>
+
+            <div class="price-box">
+                <span class="old-price">€19,99</span>
+                <span class="new-price">€2<sup>,99</sup></span>
+            </div>
+
+            <a href="#" class="cta-button" onclick="handlePurchase(event)">
+                SCARICA ORA L'EBOOK
+            </a>
+
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-icon">✓</div>
+                    <span>Pagamento Sicuro</span>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">✓</div>
+                    <span>Download Istantaneo</span>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">✓</div>
+                    <span>Supporto WhatsApp 24/7</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Preview -->
+        <section class="book-preview">
+            <h2>Cosa Scoprirai in Questo Ebook</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Il Metodo delle 48 Ore</h3>
+                    <p>Un sistema step-by-step scientificamente provato per elaborare il dolore e ritrovare te stessa in soli 2 giorni.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Psicologia del Distacco</h3>
+                    <p>Tecniche psicologiche utilizzate dai terapeuti per superare attaccamenti emotivi tossici.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Ricostruisci la Tua Autostima</h3>
+                    <p>Esercizi pratici per riconquistare fiducia in te stessa e non dipendere più dall'approvazione altrui.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Riconosci le Red Flags</h3>
+                    <p>Impara a identificare i segnali d'allarme per evitare relazioni tossiche in futuro.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>No Contact Rule</h3>
+                    <p>La strategia definitiva per smettere di pensare a lui e proteggere la tua energia emotiva.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Il Tuo Glow Up</h3>
+                    <p>Come trasformare il dolore in una versione migliore di te stessa che nessuno si aspettava.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bonuses -->
+        <section class="bonuses">
+            <h2>BONUS GRATUITI INCLUSI</h2>
+            <p class="subtitle-bonus">Valore totale €47 - TUOI GRATIS oggi!</p>
+            
+            <div class="bonus-list">
+                <div class="bonus-item">
+                    <div class="bonus-number">1</div>
+                    <div class="bonus-content">
+                        <h3>Checklist "Emergency Breakup Kit"</h3>
+                        <p>La guida tascabile da consultare nei momenti difficili con azioni immediate per sentirti meglio in 5 minuti.</p>
+                        <span class="bonus-value">Valore: €12</span>
+                    </div>
+                </div>
+
+                <div class="bonus-item">
+                    <div class="bonus-number">2</div>
+                    <div class="bonus-content">
+                        <h3>Audio Meditazione "Lascia Andare"</h3>
+                        <p>Meditazione guidata di 15 minuti per rilassare la mente e liberarti dai pensieri ossessivi. (MP3)</p>
+                        <span class="bonus-value">Valore: €15</span>
+                    </div>
+                </div>
+
+                <div class="bonus-item">
+                    <div class="bonus-number">3</div>
+                    <div class="bonus-content">
+                        <h3>Journal Template "30 Giorni di Rinascita"</h3>
+                        <p>Diario strutturato con prompt giornalieri per tracciare il tuo percorso di guarigione emotiva.</p>
+                        <span class="bonus-value">Valore: €20</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2>Hanno Già Superato il Dolore</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Non ci credevo, ma dopo 48 ore mi sentivo già diversa. Le tecniche funzionano davvero e finalmente ho smesso di stalkerarlo su Instagram!"</p>
+                    <p class="testimonial-author">Giulia M.</p>
+                    <p class="testimonial-age">19 anni, Milano</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Pensavo di non poter superare quella relazione. Questo ebook mi ha salvata. Ora sto meglio di prima e ho anche incontrato qualcuno di speciale!"</p>
+                    <p class="testimonial-author">Martina R.</p>
+                    <p class="testimonial-age">22 anni, Roma</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best €2,99 ever spesi! Il capitolo sulle red flags mi ha aperto gli occhi. Non cadrò più negli stessi errori."</p>
+                    <p class="testimonial-author">Sara B.</p>
+                    <p class="testimonial-age">17 anni, Torino</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Sono passata dal piangere ogni giorno a sentirmi di nuovo forte e sicura di me. Grazie infinite per questo metodo!"</p>
+                    <p class="testimonial-author">Chiara L.</p>
+                    <p class="testimonial-age">20 anni, Napoli</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Le mie amiche continuano a chiedermi come ho fatto a superarlo così velocemente. Gli ho mandato il link di questo ebook!"</p>
+                    <p class="testimonial-author">Elena F.</p>
+                    <p class="testimonial-age">18 anni, Bologna</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Avevo provato di tutto. Questo è l'unico metodo che ha funzionato davvero. Mi sento rinata."</p>
+                    <p class="testimonial-author">Alice P.</p>
+                    <p class="testimonial-age">21 anni, Firenze</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guarantee -->
+        <section class="guarantee">
+            <div class="guarantee-icon"></div>
+            <h2>Garanzia Soddisfatte o Rimborsate 30 Giorni</h2>
+            <p>
+                Siamo così sicure che questo metodo funzionerà per te che ti offriamo una garanzia completa: 
+                se entro 30 giorni non senti di essere migliorata, ti rimborsiamo ogni centesimo. 
+                Nessuna domanda, nessun problema. Hai tutto da guadagnare e nulla da perdere.
+            </p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <h2>Domande Frequenti</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Come ricevo l'ebook dopo l'acquisto?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Riceverai immediatamente un'email con il link per scaricare l'ebook in formato PDF. Potrai leggerlo su qualsiasi dispositivo: smartphone, tablet o computer.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Funziona davvero in 48 ore?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sì! Il metodo delle 48 ore è studiato per darti un sollievo immediato e iniziare il processo di guarigione. Ovviamente ogni persona è diversa, ma la maggior parte delle ragazze nota un miglioramento significativo già dopo 2 giorni.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>È adatto alla mia situazione specifica?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Che tu sia stata lasciata, tradita, ghostata o che tu abbia chiuso una relazione tossica, questo metodo funziona per qualsiasi tipo di delusione d'amore. Le tecniche sono universali e adattabili.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Posso pagare con carta o PayPal?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sì, accettiamo tutti i metodi di pagamento: carte di credito/debito, PayPal, Apple Pay e Google Pay. Il pagamento è sicuro al 100% con crittografia SSL.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Cosa succede se non funziona per me?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Hai 30 giorni di garanzia soddisfatte o rimborsate. Se non sei soddisfatta, ti rimborsiamo completamente senza fare domande. Ma siamo sicure che non ne avrai bisogno!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>I bonus sono davvero gratis?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sì, tutti e 3 i bonus (Checklist, Audio Meditazione e Journal Template) sono inclusi gratuitamente con l'acquisto dell'ebook. Li riceverai insieme al PDF principale.
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Pronta a Riprenderti la Tua Vita?</h2>
+            <p style="font-size: 18px; margin: 20px 0;">
+                Ogni minuto che passa senza agire è un minuto in più di sofferenza.<br>
+                Fai la scelta giusta. Per te stessa.
+            </p>
+            
+            <div class="urgency">
+                Solo 47 copie rimaste a questo prezzo
+            </div>
+
+            <a href="#" class="cta-button" onclick="handlePurchase(event)" style="margin-top: 30px;">
+                SÌ, VOGLIO SUPERARE IL DOLORE ORA
+            </a>
+
+            <p style="font-size: 14px; margin-top: 20px; opacity: 0.9;">
+                Download istantaneo - Supporto WhatsApp 24/7 - Garanzia 30 giorni
+            </p>
+
+            <div class="payment-icons">
+                <div class="payment-icon">VISA</div>
+                <div class="payment-icon">Mastercard</div>
+                <div class="payment-icon">PayPal</div>
+                <div class="payment-icon">Apple Pay</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Privacy Policy</h2>
+                <button onclick="closeModal('privacyModal')" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+            </div>
+            
+            <div style="text-align: left; max-height: 400px; overflow-y: auto; line-height: 1.6;">
+                <h3>Informazioni Raccolte</h3>
+                <p>Raccogliamo solo i dati necessari per fornirti l'ebook:</p>
+                <ul>
+                    <li>Email per l'invio del prodotto digitale</li>
+                    <li>Nome per personalizzare la comunicazione</li>
+                    <li>Informazioni di pagamento (gestite da Stripe)</li>
+                </ul>
+
+                <h3>Utilizzo dei Dati</h3>
+                <p>I tuoi dati vengono utilizzati esclusivamente per:</p>
+                <ul>
+                    <li>Invio dell'ebook acquistato via email</li>
+                    <li>Supporto clienti e assistenza tecnica</li>
+                    <li>Comunicazioni relative all'acquisto</li>
+                </ul>
+
+                <h3>Protezione dei Dati</h3>
+                <p>I tuoi dati sono protetti con crittografia SSL e non vengono mai condivisi con terze parti per scopi commerciali.</p>
+
+                <h3>I Tuoi Diritti</h3>
+                <p>Hai il diritto di richiedere l'accesso, la modifica o la cancellazione dei tuoi dati personali contattandoci a info@comeandareavanti.it</p>
+
+                <h3>Cookie</h3>
+                <p>Utilizziamo cookie tecnici essenziali per il funzionamento del sito e analytics per migliorare l'esperienza utente.</p>
+
+                <p><strong>Contatti:</strong> info@comeandareavanti.it</p>
+                <p><small>Ultimo aggiornamento: Ottobre 2025</small></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div class="modal" id="purchaseModal">
+        <div class="modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="color: var(--color-accent);">ECCO TUTTO QUELLO CHE RICEVI</h2>
+                <button onclick="closeModal('purchaseModal')" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+            </div>
+            
+            <div style="text-align: left; line-height: 1.6;">
+                <div style="background: linear-gradient(135deg, #FFF5F8 0%, #FFE8F0 100%); padding: 20px; border-radius: 15px; margin-bottom: 20px; border-left: 4px solid var(--color-accent);">
+                    <h3 style="color: var(--color-accent); margin-bottom: 15px;">PAGHI SOLO €2,99 E RICEVI:</h3>
+                    
+                    <div style="display: grid; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="background: var(--color-success); color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">✓</div>
+                            <span><strong>Ebook "48 Ore per Dimenticarlo"</strong> (Valore €19,99)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="background: var(--color-success); color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">✓</div>
+                            <span><strong>BONUS 1:</strong> Checklist "Emergency Breakup Kit" (Valore €12)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="background: var(--color-success); color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">✓</div>
+                            <span><strong>BONUS 2:</strong> Audio Meditazione "Lascia Andare" (Valore €15)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="background: var(--color-success); color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">✓</div>
+                            <span><strong>BONUS 3:</strong> Journal Template "30 Giorni di Rinascita" (Valore €20)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, var(--color-accent) 0%, #FF4F9A 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 15px;">SUPPORTO GRATUITO 24/7</h3>
+                    <p style="margin-bottom: 15px; line-height: 1.8;"><strong>INCLUSO GRATIS:</strong> Accesso alla nostra chat WhatsApp di supporto dove potrai sfogarti, parlare e chiedere consigli al nostro team di ragazzi specializzati in psicologia e materie umanistiche.</p>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.15); padding: 15px; border-radius: 10px; display: flex; align-items: center; gap: 15px;">
+                        <div style="background: white; color: var(--color-accent); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">📱</div>
+                        <div style="text-align: left;">
+                            <p style="margin: 0; font-weight: bold; font-size: 14px;">Riceverai il link WhatsApp dopo l'acquisto</p>
+                            <p style="margin: 0; font-size: 13px; opacity: 0.9;">Disponibile 24/7 per supporto emotivo</p>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 12px; font-size: 13px; opacity: 0.85;">Accesso riservato esclusivamente a chi acquista l'ebook</p>
+                </div>
+
+                <div style="text-align: center; padding: 20px 0;">
+                    <div style="margin-bottom: 15px;">
+                        <span style="text-decoration: line-through; color: #999; font-size: 18px;">Valore Totale: €66,99</span>
+                        <br>
+                        <span style="font-size: 32px; font-weight: bold; color: var(--color-accent);">OGGI SOLO €2,99</span>
+                    </div>
+                    
+                    <p style="margin: 15px 0; font-size: 14px; color: #666;">Download istantaneo dopo il pagamento • Garanzia 30 giorni</p>
+                    
+                    <button class="cta-button" onclick="proceedToCheckout()" style="margin-top: 10px;">
+                        PROCEDI AL CHECKOUT SICURO
+                    </button>
+                    
+                    <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px; align-items: center;">
+                        <div style="background: #f8f9fa; padding: 5px 10px; border-radius: 5px; font-size: 12px; color: #333;">VISA</div>
+                        <div style="background: #f8f9fa; padding: 5px 10px; border-radius: 5px; font-size: 12px; color: #333;">Mastercard</div>
+                        <div style="background: #f8f9fa; padding: 5px 10px; border-radius: 5px; font-size: 12px; color: #333;">PayPal</div>
+                        <div style="background: #f8f9fa; padding: 5px 10px; border-radius: 5px; font-size: 12px; color: #333;">Apple Pay</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Termini e Condizioni</h2>
+                <button onclick="closeModal('termsModal')" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+            </div>
+            
+            <div style="text-align: left; max-height: 400px; overflow-y: auto; line-height: 1.6;">
+                <h3>Natura del Prodotto</h3>
+                <p>"48 Ore per Dimenticarlo" è un prodotto digitale (ebook in formato PDF) con contenuti informativi ed educativi.</p>
+
+                <h3>Pagamento e Consegna</h3>
+                <p>Il pagamento viene elaborato da Stripe in modo sicuro. Dopo il pagamento riceverai immediatamente:</p>
+                <ul>
+                    <li>Ebook principale in PDF</li>
+                    <li>3 bonus gratuiti inclusi</li>
+                    <li>Email di conferma con link download</li>
+                </ul>
+
+                <h3>Garanzia 30 Giorni</h3>
+                <p>Offriamo una garanzia completa di 30 giorni. Se non sei soddisfatta, ti rimborsiamo l'intero importo senza domande.</p>
+
+                <h3>Licenza d'Uso</h3>
+                <p>Acquistando l'ebook ottieni:</p>
+                <ul>
+                    <li>Licenza d'uso personale e non commerciale</li>
+                    <li>Diritto di scaricare e conservare i file</li>
+                    <li>Divieto di condivisione o rivendita</li>
+                </ul>
+
+                <h3>Limitazioni di Responsabilità</h3>
+                <p>I contenuti hanno scopo informativo. I risultati possono variare da persona a persona. Non sostituiscono consulenze mediche o psicologiche professionali.</p>
+
+                <h3>Rimborsi</h3>
+                <p>Per richiedere un rimborso entro 30 giorni, contatta info@comeandareavanti.it con il numero dell'ordine.</p>
+
+                <h3>Controversie</h3>
+                <p>Eventuali controversie saranno risolte secondo la legge italiana.</p>
+
+                <p><strong>Contatti:</strong> info@comeandareavanti.it</p>
+                <p><small>Ultimo aggiornamento: Ottobre 2025</small></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 48 Ore per Dimenticarlo. Tutti i diritti riservati.</p>
+        <p style="margin-top: 10px; font-size: 12px;">
+            <a href="#privacy" style="color: #666; text-decoration: underline;" onclick="showPrivacy(event)">Privacy Policy</a> | 
+            <a href="#termini" style="color: #666; text-decoration: underline;" onclick="showTerms(event)">Termini e Condizioni</a> | 
+            <a href="mailto:info@comeandareavanti.it" style="color: #666; text-decoration: underline;">Contatti</a>
+        </p>
+    </footer>
+
+    <script>
+        // Countdown Timer (24 hours from page load)
+        function startCountdown() {
+            const countdownEnd = new Date(Date.now() + 24 * 60 * 60 * 1000);
+            
+            function updateTimer() {
+                const now = new Date();
+                const diff = countdownEnd - now;
+                
+                if (diff <= 0) {
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+                
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        // Quiz System
+        const quizAnswers = {
+            q1: '',
+            q2: '',
+            q3: ''
+        };
+
+        function selectAnswer(questionNum, answer, button) {
+            quizAnswers['q' + questionNum] = answer;
+            
+            // Visual feedback
+            const options = button.parentElement.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            button.classList.add('selected');
+            
+            // Wait a bit then advance
+            setTimeout(() => {
+                if (questionNum < 3) {
+                    document.getElementById('quizStep' + questionNum).classList.remove('active');
+                    document.getElementById('quizStep' + (questionNum + 1)).classList.add('active');
+                } else {
+                    showQuizResult();
+                }
+            }, 500);
+        }
+
+        function showQuizResult() {
+            document.getElementById('quizStep3').classList.remove('active');
+            document.getElementById('quizResult').classList.add('active');
+            
+            // Simulate loading
+            setTimeout(() => {
+                document.querySelector('.result-loading').style.display = 'none';
+                document.querySelector('.result-content').style.display = 'block';
+                
+                // Generate personalized result
+                const resultText = generatePersonalizedResult();
+                document.getElementById('resultText').innerHTML = resultText;
+                
+                // Animate counter
+                animateLiveCounter();
+            }, 2500);
+        }
+
+        function generatePersonalizedResult() {
+            const { q1, q2, q3 } = quizAnswers;
+            
+            let result = '<p><strong>In base alle tue risposte, ecco cosa sta succedendo:</strong></p>';
+            
+            // Personalization based on Q1
+            if (q1 === 'molto-tempo') {
+                result += '<p>Stai soffrendo da troppo tempo. Questo non è normale e non dovresti accettarlo come inevitabile. Il dolore prolungato può trasformarsi in depressione cronica se non affrontato con il metodo giusto.</p>';
+            } else if (q1 === 'oltre-mese') {
+                result += '<p>Un mese è il punto critico. Se non agisci ora, rischi di cadere in schemi mentali tossici che diventeranno sempre più difficili da spezzare.</p>';
+            } else {
+                result += '<p>Sei ancora nel periodo iniziale del dolore. Questo è il momento PERFETTO per intervenire e accorciare drasticamente il tuo percorso di guarigione.</p>';
+            }
+            
+            // Personalization based on Q2
+            if (q2 === 'speranza') {
+                result += '<p>La speranza che torni è la catena più forte che ti tiene legata. Devi spezzarla per liberarti davvero.</p>';
+            } else if (q2 === 'dipendenza') {
+                result += '<p>I pensieri ossessivi sono il sintomo di un attaccamento emotivo che sta consumando la tua energia vitale. Ogni giorno che passa è energia che regali a chi non lo merita.</p>';
+            } else if (q2 === 'autostima') {
+                result += '<p>Sentirti inadeguata è la conseguenza, non la causa. Una volta ricostruita la tua autostima, tutto il resto andrà al suo posto.</p>';
+            } else {
+                result += '<p>La paura di restare sola è un\'illusione. In realtà, stai già vivendo la solitudine più dolorosa: quella di essere disconnessa da te stessa.</p>';
+            }
+            
+            // Personalization based on Q3
+            result += '<p><strong>Vuoi provare ' + getDesiredFeeling(q3) + '?</strong> Non è un sogno impossibile. È il risultato naturale di applicare il metodo giusto.</p>';
+            
+            return result;
+        }
+
+        function getDesiredFeeling(q3) {
+            const feelings = {
+                'pace': 'pace interiore',
+                'forza': 'forza e fiducia',
+                'liberta': 'libertà mentale',
+                'felicita': 'vera felicità'
+            };
+            return feelings[q3] || 'serenità';
+        }
+
+        function animateLiveCounter() {
+            const counter = document.querySelector('.live-counter');
+            let count = 127;
+            setInterval(() => {
+                count = 120 + Math.floor(Math.random() * 15);
+                counter.textContent = count;
+            }, 3000);
+        }
+
+        function closeQuizAndScroll() {
+            document.getElementById('quizModal').classList.remove('active');
+            document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+            
+            // Add pulse effect to CTA
+            const cta = document.querySelector('.hero .cta-button');
+            cta.style.animation = 'pulse 1s infinite';
+        }
+
+        // Purchase Handler (show recap modal first)
+        function handlePurchase(event) {
+            if (event) event.preventDefault();
+            showPurchaseModal();
+        }
+        
+        function showPurchaseModal() {
+            document.getElementById('purchaseModal').classList.add('active');
+        }
+        
+        function proceedToCheckout() {
+            // Close modal and redirect to Stripe checkout
+            document.getElementById('purchaseModal').classList.remove('active');
+            
+            // Integrate with Stripe/PayPal here
+            // Example for Stripe Checkout:
+            // stripe.redirectToCheckout({ sessionId: 'YOUR_SESSION_ID' });
+            
+            // After successful payment, show WhatsApp access
+            // You can add this to your Stripe success page or send via email
+            const whatsappNumber = '+37258472379';
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=Ciao!%20Ho%20appena%20acquistato%20l'ebook%20%2248%20Ore%20per%20Dimenticarlo%22%20e%20vorrei%20accedere%20al%20supporto%2024/7`;
+            
+            // Temporary placeholder - Replace with actual payment integration
+            alert('⚙️ INTEGRAZIONE STRIPE\n\nInserisci qui il codice Stripe Checkout:\n\nstripe.redirectToCheckout({\n  lineItems: [{price: "price_xxx", quantity: 1}],\n  mode: "payment",\n  successUrl: "https://comeandareavanti.it/success?whatsapp=' + encodeURIComponent(whatsappLink) + '",\n  cancelUrl: "https://comeandareavanti.it"\n});\n\nDominio: comeandareavanti.it\n\nNella pagina success.html mostra il link WhatsApp: ' + whatsappLink);
+        }
+
+        // Scroll animations (optional enhancement)
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.benefit-card, .testimonial-card, .bonus-item');
+            
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                
+                if (position.top < window.innerHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize opacity for scroll animations
+        document.querySelectorAll('.benefit-card, .testimonial-card, .bonus-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Start countdown on page load
+        startCountdown();
+
+        // Exit Intent Popup (optional)
+        let exitIntentShown = false;
+        
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY <= 0 && !exitIntentShown) {
+                exitIntentShown = true;
+                
+                if (confirm('⚠️ Aspetta! Stai per perdere l\'offerta a €2,99. Vuoi davvero andartene?')) {
+                    // User clicked OK (wants to stay)
+                } else {
+                    // User clicked Cancel (wants to leave)
+                }
+            }
+        });
+
+        // Privacy & Terms Modals
+        function showPrivacy(event) {
+            event.preventDefault();
+            document.getElementById('privacyModal').classList.add('active');
+        }
+
+        function showTerms(event) {
+            event.preventDefault();
+            document.getElementById('termsModal').classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
